@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./public/style.css">
+    <style>
+        .card {
+            display: flex;
+            flex-direction: column;
+            border: 1px solid black;
+            font-size: larger;
+            background-color: blanchedalmond;
+            padding: 1rem;
+            height: 100px;
+        }
+        .container{
+            background-color:lightcoral;
+            display: grid;
+            height: 100vh;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 60px 110px;
+            grid-template-areas: 
+            "a a b";
+            padding:20px;
+            gap: 20px;
+        }
+        .container header{
+            grid-area: a;
+            text-align: center;
+            display: flex;
+            align-items: center;
+        }
+        .title{
+            font-weight: bolder;
+        }
+        .date{
+            font-size: x-small; 
+            align-self: flex-end;
+        }
+        .note-text{
+        flex:1;
+    }
+    img{
+        height:40px;
+        width: 40px;
+    }
+    .note-btn{
+        display:flex;
+        align-items: center;
+        justify-content: center;
+        background-color: whitesmoke;
+    }
+    .note-btn:hover{
+        cursor: pointer;
+        border:3px solid blue;
+    }
+    header h1{
+        margin-left: 280px;
+    }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <header><h3>User1</h3><h1>Notes List</h1></header>
+        <div class="note-btn">
+        <img src="./public/icons/create.png" alt="">
+        <span>Create Your Notes Here</span>
+    </div>
+        <div class="card">
+            <div class="title">Title</div>
+            <div class="note-text">write the notes here....</div>
+            <div class="date">8/4/2025</div>
+        </div>
+        <div class="card">
+            <div class="title">Title</div>
+            <div class="note-text">write the notes here....</div>
+            <div class="date">8/4/2025</div>
+        </div>
+        <div class="card">
+            <div class="title">Title</div>
+            <div class="note-text">write the notes here....</div>
+            <div class="date">8/4/2025</div>
+        </div>
+        <div class="card">
+            <div class="title">Title</div>
+            <div class="note-text">write the notes here....</div>
+            <div class="date">8/4/2025</div>
+        </div>
+    </div>
+</body>
+
+</html>

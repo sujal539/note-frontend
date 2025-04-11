@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./public/style.css">
+    <style>
+        body{
+            height: 100vh;
+            background-color: #1e2a44; /* Rich dark blue-gray */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        form{
+            display: flex;
+            height: 300px;
+            width:fit-content;
+            padding: 20px;
+            background-color: lightgreen;
+            gap: 20px;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        form:hover{
+            border:2px solid black;
+        }
+        h3{
+            text-align: center;
+        }
+        input{
+            padding:5px 20px;
+            background-color: darkkhaki;
+            color:whitesmoke;
+        }
+        button{
+            height:30px;
+            width:150px;
+            background-color: lightblue;
+        }
+    </style>
+</head>
+<body>
+    <form action="">
+        <h3>Create Note</h3>
+        <input type="text" placeholder="Select Your Title Here ">
+        <textarea name="content" id="content" placeholder="type your content here...."></textarea>
+        <button>Submit</button>
+    </form>
+</body>
+</html>

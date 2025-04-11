@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="./public/style.css">
+    <style>
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(to right, #2a3d66, #1c2a4d); /* Elegant dark gradient */
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+        }
+
+        .card {
+            width: 400px;
+            padding: 30px;
+            background-color: #1e2a44; /* Rich dark blue-gray */
+            color: white;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+            margin: 20px;
+        }
+
+        .input-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            align-items: center;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        label {
+            font-weight: bold;
+            color: #d1d1d1;
+        }
+
+        input {
+            padding: 12px;
+            margin: 8px;
+            border: 2px solid #4f6d8f;
+            border-radius: 6px;
+            font-size: 14px;
+            background-color: #333;
+            color: white;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #4CAF50;
+            box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+        }
+
+        .btn-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .btn-container button {
+            padding: 12px 30px;
+            font-weight: bold;
+            background: linear-gradient(to right, #4CAF50, #8BC34A); /* Stylish button gradient */
+            color: white;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .btn-container button:hover {
+            background: linear-gradient(to right, #388E3C, #7CB342); /* Darker hover effect */
+        }
+
+        .signup-text {
+            display: block;
+            margin-top: 15px;
+            text-align: center;
+            font-weight: bold;
+            color: #BBDEFB;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .signup-text:hover {
+            color: #81D4FA;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="card">
+        <form action="">
+            <div class="input-grid">
+                <label for="email">Email:</label>
+                <input type="text" id="email" name="email" required>
+            </div>
+            <div class="input-grid">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+
+            <div class="btn-container">
+                <button type="submit">Login</button>
+                <a class="signup-text" href="./registration.html">Create an Account</a>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
