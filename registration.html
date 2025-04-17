@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registration</title>
@@ -100,6 +101,14 @@
         .signup-text:hover {
             color: #81D4FA; /* Lighter blue on hover */
         }
+        .rel-icon{
+            position:relative;
+        }
+        .abs-icon{
+            position: absolute;
+            top:35%;
+            right:10px;
+        }
     </style>
 </head>
 
@@ -121,14 +130,16 @@
                 <input type="text" id="email" name="email" required>
             </div>
 
-            <div class="input-grid">
+            <div class="input-grid rel-icon">
                 <label for="password">Password:</label>
-                <input type="password" id="password" name="password" required>
+                <input  type="password" id="password" name="password" required>
+                <i onclick="protect1()" class="fa-solid fa-eye-slash abs-icon"></i>
             </div>
 
-            <div class="input-grid">
+            <div class="input-grid rel-icon">
                 <label for="confirm-password">Re-type Password:</label>
-                <input type="password" id="confirm-password" name="confirm-password" required>
+                <input  type="password" id="confirm-password" name="confirm-password" required>
+                <i onclick="protect2()" class="fa-solid fa-eye-slash abs-icon"></i>
             </div>
 
             <div class="btn-container">
@@ -158,13 +169,53 @@
                     alert('Registration successful');
                     window.location.href = './login.html';
                 } else {
-                    alert('Registration failed: ' + res.error);
+                    console.log(res.body.error)
+                    alert(`Registration failed: + ${res.body.error}`);
                 }
             })
-            .catch(err => console.log(err))
+
         });
         
-     
+        const passInput = document.getElementById('password')
+        const rePass = document.getElementById('confirm-password')
+        rePass.addEventListener('blur', (e)=>{
+            console.log(passInput.innerText)
+            console.log(rePass.innerText)
+            if(passInput.innerText !== rePass.innerText){
+                alert("passwords don't match")
+            }
+        })
+
+        function protect1(){
+
+             const iTags = document.getElementsByClassName("abs-icon")
+        const first = iTags[0]
+        const contains = first.classList.contains('fa-eye-slash')
+        console.log(contains)
+        if(contains){
+            first.classList.replace('fa-eye-slash', 'fa-eye');
+            passInput.setAttribute('type', 'text')
+        }else{
+            first.classList.replace('fa-eye', 'fa-eye-slash');
+            passInput.setAttribute('type', 'password')
+        }
+    }
+
+        function protect2(){
+             const iTags = document.getElementsByClassName("abs-icon")
+        const first = iTags[1]
+        const contains = first.classList.contains('fa-eye-slash')
+        console.log(contains)
+        if(contains){
+            first.classList.replace('fa-eye-slash', 'fa-eye');
+            rePass.setAttribute('type', 'text')
+        }else{
+            first.classList.replace('fa-eye', 'fa-eye-slash');
+            rePass.setAttribute('type', 'password~')
+        }
+    }
+
+
     </script>
 </body>
 
