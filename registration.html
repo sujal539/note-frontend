@@ -117,17 +117,17 @@
         <form id="registration-form">
             <div class="input-grid">
                 <label for="firstName">First Name:</label>
-                <input type="text" id="firstName" name="firstName" required>
+                <input type="text" pattern="^[A-Za-z]{2,50}$"   id="firstName" name="firstName" required>
             </div>
 
             <div class="input-grid">
                 <label for="lastName">Last Name:</label>
-                <input type="text" id="lastName" name="lastName" required>
+                <input type="text" id="lastName"  pattern="^[A-Za-z]{2,50}$" name="lastName" required>
             </div>
 
             <div class="input-grid">
                 <label for="email">Email:</label>
-                <input type="text" id="email" name="email" required>
+                <input id="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2}$" name="email" type="email" required>
             </div>
 
             <div class="input-grid rel-icon">

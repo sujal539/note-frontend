@@ -96,10 +96,10 @@
 
 <body>
     <div class="card">
-        <form action="">
+        <form id="registration-form">
             <div class="input-grid">
                 <label for="email">Email:</label>
-                <input type="text" id="email" name="email" required>
+                <input type="text" id="email" pattern="^[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2}$" name="email" required>
             </div>
             <div class="input-grid">
                 <label for="password">Password:</label>
@@ -112,6 +112,7 @@
             </div>
         </form>
     </div>
+    <script src="./public/login.js" ></script>
 </body>
 
 </html>
