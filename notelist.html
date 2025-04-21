@@ -67,7 +67,7 @@
 
     <div class="container">
         <header><h3>User1</h3><h1>Notes List</h1></header>
-        <div class="note-btn">
+        <div onclick="toCreate()" class="note-btn">
         <img src="./public/icons/create.png" alt="">
         <span>Create Your Notes Here</span>
     </div>
@@ -92,6 +92,10 @@
             <div class="date">8/4/2025</div>
         </div>
     </div>
+    <script>
+    function toCreate(){
+        window.location.href="./createnote.html"
+    }
+    </script>
 </body>
-
 </html>
