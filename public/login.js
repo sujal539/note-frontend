@@ -10,6 +10,7 @@ form.addEventListener('submit', (e) => {
 function login(data){
     fetch('http://localhost:3455/login',{
         method : 'POST',
+        credentials: 'include',
         headers:{
             'Content-Type': 'application/json'
         },
