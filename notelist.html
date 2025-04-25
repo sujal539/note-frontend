@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,7 +15,7 @@
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       grid-template-rows: 80px auto 1fr;
-      grid-template-areas: 
+      grid-template-areas:
         "header header header"
         "button button button"
         "cards cards cards";
@@ -26,9 +27,31 @@
     }
 
     @keyframes gradientShift {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
+      0% {
+        background-position: 0% 50%;
+      }
+
+      50% {
+        background-position: 100% 50%;
+      }
+
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+    .note-action{
+      display: flex;
+      gap:10px;
+    }
+    .note-action button{
+      padding: 12px 30px;
+        font-weight: bold;
+        background: linear-gradient(to right, #4CAF50, #8BC34A); /* Green gradient */
+        color: white;
+        border: none;
+        border-radius: 30px;
+        cursor: pointer;
+        transition: background 0.3s ease, transform 0.2s ease;
     }
 
     /* 🔹 Header */
@@ -61,7 +84,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      background:  #160270;
+      background: #160270;
       color: white;
       font-weight: 600;
       border-radius: 10px;
@@ -142,34 +165,22 @@
       <span>Create Your Notes Here</span>
     </div>
 
-    <div class="cards-wrapper">
+    <div id="cards-wrapper" class="cards-wrapper">
       <div class="card">
-        <div class="title">Meeting Notes</div>
-        <div class="note-text">Discuss the quarterly goals and KPIs.</div>
-        <div class="date">8/4/2025</div>
+        <div class="title">ddda</div>
+        <div class="note-text">dadad</div>
+        <p>2025-04-25 07:31:00</p>
+        <div id="note-action" class="note-action">
+          <button>EDIT</button>
+          <button>DELETE</button>
+        </div>
       </div>
-      <div class="card">
-        <div class="title">Grocery List</div>
-        <div class="note-text">Milk, Bread, Eggs, Fruits.</div>
-        <div class="date">8/4/2025</div>
-      </div>
-      <div class="card">
-        <div class="title">Ideas</div>
-        <div class="note-text">Start a blog on productivity tips.</div>
-        <div class="date">8/4/2025</div>
-      </div>
-      <div class="card">
-        <div class="title">Reminders</div>
-        <div class="note-text">Doctor appointment at 3PM.</div>
-        <div class="date">8/4/2025</div>
-      </div>
+    
     </div>
   </div>
+  </div>
 
-  <script>
-    function toCreate() {
-      window.location.href = "./createnote.html";
-    }
-  </script>
+  <script src="./public/notelist.js"></script>
 </body>
+
 </html>

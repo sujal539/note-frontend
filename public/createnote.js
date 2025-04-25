@@ -19,7 +19,7 @@ const handleCreate = function (e) {
             console.log(res);
             if (res.ok) {
                 alert('note successful');
-                window.location.href = './login.html';
+                window.location.href = './notelist.html';
             } else {
                 console.log(res.body.error)
                 alert(`note failed: + ${res.body.error}`);
