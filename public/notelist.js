@@ -6,6 +6,7 @@ function toCreate() {
     {
         method:"GET",
         credentials:"include",
+        mode: 'cors',
         headers:{
             "Content-Type":"application/json"
         }

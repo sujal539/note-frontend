@@ -46,13 +46,18 @@
     .note-action button{
       padding: 12px 30px;
         font-weight: bold;
-        background: linear-gradient(to right, #4CAF50, #8BC34A); /* Green gradient */
-        color: white;
-        border: none;
+        background: linear-gradient(to right, #516e81, #517980); /* Green gradient */
+        border: 2px solid rgb(61, 82, 88);
+        color:white;
         border-radius: 30px;
         cursor: pointer;
         transition: background 0.3s ease, transform 0.2s ease;
     }
+    .note-action button:hover{
+      border: none;
+      color:white;
+    }
+
 
     /* 🔹 Header */
     header {
@@ -171,7 +176,7 @@
         <div class="note-text">dadad</div>
         <p>2025-04-25 07:31:00</p>
         <div id="note-action" class="note-action">
-          <button>EDIT</button>
+          <button class="edit" >EDIT</button>
           <button>DELETE</button>
         </div>
       </div>
