@@ -7,8 +7,10 @@ form.addEventListener('submit', (e) => {
     login(data)
 });
 
-function login(data){
-    fetch('http://localhost:3455/login',{
+
+
+async function login(data){
+   const res =  await fetch('http://localhost:3455/login',{
         method : 'POST',
         credentials: 'include',
         headers:{
@@ -16,15 +18,18 @@ function login(data){
         },
         body: JSON.stringify(data)
         
-    })
-    .then(res => {
-        if(res.ok){
-            alert('login success')
-            window.location.href = "./notelist.html"
-        }
-        else {
-        alert('unable to login')
-        }
-    })
+    });
+
+    if(res.ok){
+        alert('login success')
+        const user = await res.json()
+        localStorage.setItem("userId", user.data.userId)
+
+        window.location.href = "./notelist.html"
+    }else{
+        alert("unable to login")
+    }
+    
+
 }
 

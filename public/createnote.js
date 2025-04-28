@@ -13,6 +13,7 @@ const handleCreate = function (e) {
         headers: {
         'Content-Type': 'application/json'
         },
+        credentials: 'include',
         body: JSON.stringify({title, content})  // ← this should be "body", not "data"
         })
         .then(res => {
