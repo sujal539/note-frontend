@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Notes Dashboard</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="./public/style.css">
   <style>
     /* 🔹 Professional Background */
@@ -159,12 +160,17 @@
 </head>
 
 <body>
+  
   <div class="container">
     <header>
       <h3>User1</h3>
       <h1>Notes List</h1>
+      <div>
+      <button onclick="logout()">LOGOUT</button>
+      <i class="fa-solid fa-right-from-bracket"></i>
+    </div>
     </header>
-
+    
     <div onclick="toCreate()" class="note-btn">
       <img src="./public/icons/create.png" alt="Create Icon">
       <span>Create Your Notes Here</span>

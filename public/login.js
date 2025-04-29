@@ -10,6 +10,7 @@ form.addEventListener('submit', (e) => {
 
 
 async function login(data){
+
    const res =  await fetch('http://localhost:3455/login',{
         method : 'POST',
         credentials: 'include',
@@ -24,8 +25,8 @@ async function login(data){
         alert('login success')
         const user = await res.json()
         localStorage.setItem("userId", user.data.userId)
-
-        window.location.href = "./notelist.html"
+        clearHistoryAndRedirect("/notelist.html")
+      
     }else{
         alert("unable to login")
     }

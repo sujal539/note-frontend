@@ -149,6 +149,7 @@
             <a class="signup-text" href="./login.html">Already have an account? Login</a>
         </form>
     </div>
+    <script src="./public/main.js" ></script>
     <script>
         const form = document.getElementById('registration-form')
         form.addEventListener('submit', (e) => {
@@ -168,7 +169,7 @@
                 console.log(res);
                 if (res.ok) {
                     alert('Registration successful');
-                    window.location.href = './login.html';
+                    clearHistoryAndRedirect("/login.html")
                 } else {
                     console.log(res.body.error)
                     alert(`Registration failed: + ${res.body.error}`);
