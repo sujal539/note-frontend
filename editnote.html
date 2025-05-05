@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+    <style>
+    /* Reset box sizing */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #8e9eab, #eef2f3); /* Clean neutral gradient */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Form container */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 30px 40px;
+    width: 100%;
+    max-width: 500px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Form heading */
+h3 {
+    margin: 0;
+    text-align: center;
+    color: #2c3e50;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+/* Input + Textarea styles */
+input, textarea {
+    width: 100%;
+    padding: 12px 16px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    font-family: inherit;
+}
+
+input:focus, textarea:focus {
+    border-color: #5c7cfa;
+    box-shadow: 0 0 0 3px rgba(92, 124, 250, 0.2);
+    outline: none;
+}
+
+/* Optional: borderless class if needed */
+.no-border {
+    border: none;
+}
+
+/* Button styling */
+.btn-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+button {
+    padding: 12px 24px;
+    background-color: #5c7cfa;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #3f5ed7;
+}
+</style>
+<body>
+<form id="update-form">
+    <h3>Update Note</h3>
+    <div class="input-container">
+        <input class="" type="text" id="title" name="title" placeholder="Select Your Title Here ">
+    </div>
+    <textarea class="no-border" name="content" id="content" placeholder="type your content here...."></textarea>
+
+    <div class="btn-container">
+        <button type="submit">Update</button>
+    </div>
+</form>
+<script src="./public/editnote.js"></script>
+</body>
+</html>

@@ -41,7 +41,11 @@ async function getNotes() {
 
         wrapperDiv.appendChild(card)
         editBtn.addEventListener('click', () => {
-
+            // window.location.href = "./editnote.html";
+            const url = new URL('http://localhost:5501/editnote.html');
+            url.searchParams.set('id', element.id);
+            window.location.href = url.toString(); // Triggers navigation
+            // window.history.pushState({}, '', url);
         })
         delBtn.addEventListener('click', () => {
             console.log('del')
@@ -71,8 +75,21 @@ async function logout() {
         }
     )
 
-    if(response.ok){
-        window.location.href = "http://localhost:5500/login.html"
+    if (response.ok) {
+        window.location.href = "/login.html"
     }
 }
 getNotes()
+
+function getUserData() {
+    fetch('http://localhost:3455/auth/me', {
+        method: 'GET',
+        credentials: 'include'
+    }).then(res => res.json())
+    .then(data => console.log(data, "user"))
+    .catch(err => console.log(err))
+    
+    
+}
+
+getUserData()
