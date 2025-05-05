@@ -8,7 +8,7 @@ const handleCreate = function (e) {
     const title = formData.get('title')
     const content = formData.get('content')
 
-    fetch('http://localhost:3455/note', {
+    fetch('http://localhost:3455/api/note', {
         method: 'POST',
         headers: {
         'Content-Type': 'application/json'

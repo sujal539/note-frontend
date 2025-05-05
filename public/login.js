@@ -11,7 +11,7 @@ form.addEventListener('submit', (e) => {
 
 async function login(data){
 
-   const res =  await fetch('http://localhost:3455/login',{
+   const res =  await fetch('http://localhost:3455/auth/login',{
         method : 'POST',
         credentials: 'include',
         headers:{

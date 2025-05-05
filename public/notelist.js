@@ -2,11 +2,10 @@ function toCreate() {
     window.location.href = "./createnote.html";
 }
 async function getNotes() {
-    const response = await fetch('http://localhost:3455/notes',
+    const response = await fetch('http://localhost:3455/api/notes',
         {
             method: "GET",
             credentials: "include",
-            mode: 'cors',
             headers: {
                 "Content-Type": "application/json"
             }
@@ -36,19 +35,44 @@ async function getNotes() {
         card.appendChild(contentDiv)
         card.appendChild(dateDiv)
         card.appendChild(noteActionDiv)
+
         noteActionDiv.appendChild(editBtn)
         noteActionDiv.appendChild(delBtn)
-        wrapperDiv.appendChild(card)
-    });
 
-    console.log(notes)
+        wrapperDiv.appendChild(card)
+        editBtn.addEventListener('click', () => {
+
+        })
+        delBtn.addEventListener('click', () => {
+            console.log('del')
+            fetch(`http://localhost:3455/api/note/${element.id}`, {
+                method: 'DELETE',
+                credentials: 'include'
+            })
+                .then(res => {
+
+                    if (res.ok) {
+                        alert(`note with id ${element.id} deleted successfully`)
+                    }
+                    location.reload()
+                })
+                .catch(err => {
+                    alert("Failed to delete the note!")
+                })
+        })
+    });
 }
+
 async function logout() {
-    fetch("http://localhost:3455/logout",
+    const response = await fetch("http://localhost:3455/auth/logout",
         {
-            method:"POST",
-            credentials:"include"
+            method: "POST",
+            credentials: "include"
         }
     )
+
+    if(response.ok){
+        window.location.href = "http://localhost:5500/login.html"
+    }
 }
 getNotes()

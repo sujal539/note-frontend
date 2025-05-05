@@ -5,7 +5,7 @@ function clearHistoryAndRedirect(path) {
 }
 
 async function validateSession() {
-    const res = await fetch('http://localhost:3455/me', {
+    const res = await fetch('http://localhost:3455/auth/me', {
         method: 'GET',
         credentials: 'include'
     });
